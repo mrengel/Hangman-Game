@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hang-Ten Hangman!</title>
+</head>
+
+<body>
+
+	<div id="game">
+    <p>Press a letter to start playing!</p>
+  </div>	
+
+  <script type="text/javascript">
+
+  var game = ["surf", "waves", "narly", "board"]
+  var choice = Math.floor(Math.random()*4);
+  var answer = game[choice];
+  var myLength = answer.length;
+  var display = [myLength];
+  var win = myLength;
+  var letters = answer.split('');
+  var attemptsLeft = 10;
+  var output = "";
+  var userLetter="";
+
+
+  //document.onkeyup = function(event){
+
+  		//var userGuess = event.key.toLowerCase();
+var setup = function(){
+  	for(var i=0; i<answer.length; i++){
+
+  			display[i] = "_ ";
+  			output = output + display[i];
+  			
+  		}
+  		document.getElementByID("game").innerHTML = output; output ="";
+
+  }	
+
+  	var html = 
+  		"<p>Current Word " + output + "</p>";
+
+
+
+  	document.querySelector("#game").innerHTML = html;
+
+  window.onload = function(){
+  	setup();
+  }
+      
+
+
+
+
+
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+</body>
